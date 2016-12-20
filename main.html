@@ -32,38 +32,28 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="javascript.js" />
 </head>
 
 <script type="text/javascript">
-    function showOnly(img-layout-num) {
-        for (var i = 1; i <= 5; i++) {
-            if (i != img-layout-num) {
-                $('#img'.concat(i).concat('-layout')).hide();
-            } else {
-                $('#img'.concat(i).concat('-layout')).show();
-            }
-            
-        };
-        
-    }
-    $(document).ready(function () {
-        showOnly(1);
+$(document).ready(function () {
+    showOnly(1);
 
-        $('#img1-btn').click(function () {
-            showOnly(2);
-        });
-        $('#img2-btn').click(function () {
-            showOnly(3);
-        });
-        $('#img3-btn').click(function () {
-            showOnly(4);
-        });
-        $('#img4-btn').click(function () {
-            showOnly(5);
-        });
-    })
-
+    $('#img1-btn').click(function () {
+        showOnly(2);
+    });
+    $('#img2-btn').click(function () {
+        showOnly(3);
+    });
+    $('#img3-btn').click(function () {
+        showOnly(4);
+    });
+    $('#img4-btn').click(function () {
+        showOnly(5);
+    });
+})
 </script>
+
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
