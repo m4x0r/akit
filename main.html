@@ -35,40 +35,31 @@
 </head>
 
 <script type="text/javascript">
+    function showOnly(img-layout-num) {
+        for (var i = 1; i <= 5; i++) {
+            if (i != img-layout-num) {
+                $('#img'.concat(i).concat('-layout')).hide();
+            } else {
+                $('#img'.concat(i).concat('-layout')).show();
+            }
+            
+        };
+        
+    }
     $(document).ready(function () {
-        $('#img1-layout').show();
-        $('#img2-layout').hide();
-        $('#img3-layout').hide();
-        $('#img4-layout').hide();
-        $('#img5-layout').hide();
+        showOnly(1);
 
         $('#img1-btn').click(function () {
-            $('#img1-layout').hide();
-            $('#img2-layout').show();
-            $('#img3-layout').hide();
-            $('#img4-layout').hide();
-            $('#img5-layout').hide();
+            showOnly(2);
         });
         $('#img2-btn').click(function () {
-            $('#img1-layout').hide();
-            $('#img2-layout').hide();
-            $('#img3-layout').show();
-            $('#img4-layout').hide();
-            $('#img5-layout').hide();
+            showOnly(3);
         });
         $('#img3-btn').click(function () {
-            $('#img1-layout').hide();
-            $('#img2-layout').hide();
-            $('#img4-layout').show();
-            $('#img3-layout').hide();
-            $('#img5-layout').hide();
+            showOnly(4);
         });
         $('#img4-btn').click(function () {
-            $('#img1-layout').hide();
-            $('#img2-layout').hide();
-            $('#img5-layout').show();
-            $('#img3-layout').hide();
-            $('#img4-layout').hide();
+            showOnly(5);
         });
     })
 
