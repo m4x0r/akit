@@ -51,6 +51,7 @@ function nextButtonLogic(imgLayoutNum, numTags) {
     }
 }
 
+// Get the users selection (i.e., "Good" or "Bad") for a tag
 function grabSelection(imgLayoutNum, tagNum)
 {
     var goodBtnID = '#img'.concat(imgLayoutNum).concat('-option-').concat(tagNum).concat('-1');
@@ -61,8 +62,9 @@ function grabSelection(imgLayoutNum, tagNum)
     return 'Bad';
 }
 
+// Post values for a single picture
 function postSelectedValues(imgLayoutNum, numTags) {
-    data = [];
+    data = [{"imageNum" : imgLayoutNum}];
     tagnames = ["Airplane", "Ship", "Car", "Vehicle", "Sport"];
     for (var i = 1; i <= numTags; i++) {
         var obj = {};
