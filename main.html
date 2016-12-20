@@ -17,6 +17,7 @@
   See the License for the specific language governing permissions and
   limitations under the License
 -->
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -28,31 +29,39 @@
           href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <link rel="stylesheet" href="style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="javascript.js" />
+    <script type='text/javascript' src="myjs.js?iadsfg"></script>
+
+    <script type='text/javascript'>
+        var numTags = 5;
+        $(document).ready(function () {            
+            showOnly(1);
+
+            $('#img1-btn').click(function () {
+                nextButtonLogic(1, numTags);
+            });
+            $('#img2-btn').click(function () {
+                nextButtonLogic(2, numTags);
+            });
+            $('#img3-btn').click(function () {
+                nextButtonLogic(3, numTags);
+            });
+            $('#img4-btn').click(function () {
+                nextButtonLogic(4, numTags);
+            });
+            $('#img5-btn').click(function () {
+                nextButtonLogic(5, numTags);
+                postSelectedValues();
+            });
+        });
+    </script>
 </head>
 
-<script type="text/javascript">
-$(document).ready(function () {
-    showOnly(1);
 
-    $('#img1-btn').click(function () {
-        showOnly(2);
-    });
-    $('#img2-btn').click(function () {
-        showOnly(3);
-    });
-    $('#img3-btn').click(function () {
-        showOnly(4);
-    });
-    $('#img4-btn').click(function () {
-        showOnly(5);
-    });
-})
-</script>
 
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -662,7 +671,7 @@ $(document).ready(function () {
                         </table>
                     </div>
                     <div class="mdl-card__actions">
-                        <a href="#img1-layout" class="mdl-button">Done!</a>
+                        <a href="goodbye.html" id="img5-btn" class="mdl-button">Done!</a>
                     </div>
                 </div>
             </section>
