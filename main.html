@@ -1,0 +1,693 @@
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script> -->
+
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+      https://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Crowdsourcing</title>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#img1-layout').show();
+        $('#img2-layout').hide();
+        $('#img3-layout').hide();
+        $('#img4-layout').hide();
+        $('#img5-layout').hide();
+
+        $('#img1-btn').click(function () {
+            $('#img1-layout').hide();
+            $('#img2-layout').show();
+            $('#img3-layout').hide();
+            $('#img4-layout').hide();
+            $('#img5-layout').hide();
+        });
+        $('#img2-btn').click(function () {
+            $('#img1-layout').hide();
+            $('#img2-layout').hide();
+            $('#img3-layout').show();
+            $('#img4-layout').hide();
+            $('#img5-layout').hide();
+        });
+        $('#img3-btn').click(function () {
+            $('#img1-layout').hide();
+            $('#img2-layout').hide();
+            $('#img4-layout').show();
+            $('#img3-layout').hide();
+            $('#img5-layout').hide();
+        });
+        $('#img4-btn').click(function () {
+            $('#img1-layout').hide();
+            $('#img2-layout').hide();
+            $('#img5-layout').show();
+            $('#img3-layout').hide();
+            $('#img4-layout').hide();
+        });
+    })
+
+</script>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            <h3>Decide if a given word matches the picture well.</h3>
+        </div>
+        <!--
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+            <a href="#img1-layout" class="mdl-layout__tab is-active">Image 1</a>
+            <a href="#img2-layout" class="mdl-layout__tab">Image 2</a>
+            <a href="#img3-layout" class="mdl-layout__tab">Image 3</a>
+            <a href="#img4-layout" class="mdl-layout__tab">Image 4</a>
+            <a href="#img5-layout" class="mdl-layout__tab">Image 5</a>
+        </div>
+        -->
+    </header>
+    <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="img1-layout">
+            <section id="img1" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <header class="section__play-btn mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--teal-50 mdl-color-text--white">
+                </header>
+                <div class="mdl-card mdl-cell mdl-cell--4-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                    <div class="mdl-card__supporting-text">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%;">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Word</th>
+                                <th>Good</th>
+                                <th>Bad</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Airplane</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img1-option-1-1">
+                                        <input type="radio" id="img1-option-1-1" class="mdl-radio__button"
+                                               name="options1" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img1-option-1-2">
+                                        <input type="radio" id="img1-option-1-2" class="mdl-radio__button"
+                                               name="options1" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Ship</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img1-option-2-1">
+                                        <input type="radio" id="img1-option-2-1" class="mdl-radio__button"
+                                               name="options2" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img1-option-2-2">
+                                        <input type="radio" id="img1-option-2-2" class="mdl-radio__button"
+                                               name="options2" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Car</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img1-option-3-1">
+                                        <input type="radio" id="img1-option-3-1" class="mdl-radio__button"
+                                               name="options3" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img1-option-3-2">
+                                        <input type="radio" id="img1-option-3-2" class="mdl-radio__button"
+                                               name="options3" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Vehicle</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img1-option-4-1">
+                                        <input type="radio" id="img1-option-4-1" class="mdl-radio__button"
+                                               name="options4" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img1-option-4-2">
+                                        <input type="radio" id="img1-option-4-2" class="mdl-radio__button"
+                                               name="options4" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Sport</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img1-option-5-1">
+                                        <input type="radio" id="img1-option-5-1" class="mdl-radio__button"
+                                               name="options5" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img1-option-5-2">
+                                        <input type="radio" id="img1-option-5-2" class="mdl-radio__button"
+                                               name="options5" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                         style="width:100%;">
+                                        <input class="mdl-textfield__input" type="text" id="img1-freetag">
+                                        <label class="mdl-textfield__label" for="img1-freetag">Own tag idea (optional)</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a href="#img2-layout" id="img1-btn" class="mdl-button">Next Picture</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="mdl-layout__tab-panel is-active" id="img2-layout">
+            <section id="img2" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <header class="section__play-btn mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--teal-50 mdl-color-text--white">
+                </header>
+                <div class="mdl-card mdl-cell mdl-cell--4-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                    <div class="mdl-card__supporting-text">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%;">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Word</th>
+                                <th>Good</th>
+                                <th>Bad</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Airplane</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img2-option-1-1">
+                                        <input type="radio" id="img2-option-1-1" class="mdl-radio__button"
+                                               name="options1" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img2-option-1-2">
+                                        <input type="radio" id="img2-option-1-2" class="mdl-radio__button"
+                                               name="options1" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Ship</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img2-option-2-1">
+                                        <input type="radio" id="img2-option-2-1" class="mdl-radio__button"
+                                               name="options2" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img2-option-2-2">
+                                        <input type="radio" id="img2-option-2-2" class="mdl-radio__button"
+                                               name="options2" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Car</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img2-option-3-1">
+                                        <input type="radio" id="img2-option-3-1" class="mdl-radio__button"
+                                               name="options3" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img2-option-3-2">
+                                        <input type="radio" id="img2-option-3-2" class="mdl-radio__button"
+                                               name="options3" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Vehicle</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img2-option-4-1">
+                                        <input type="radio" id="img2-option-4-1" class="mdl-radio__button"
+                                               name="options4" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img2-option-4-2">
+                                        <input type="radio" id="img2-option-4-2" class="mdl-radio__button"
+                                               name="options4" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Sport</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+                                           for="img2-img2-freetag-1">
+                                        <input type="radio" id="img2-option-5-1" class="mdl-radio__button"
+                                               name="options5" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img2-option-5-2">
+                                        <input type="radio" id="img2-option-5-2" class="mdl-radio__button"
+                                               name="options5" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                         style="width:100%;">
+                                        <input class="mdl-textfield__input" type="text" id="img2-freetag">
+                                        <label class="mdl-textfield__label" for="img2-freetag">Own tag idea (optional)</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a id="img2-btn" href="#img3-layout" class="mdl-button">Next Picture</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="mdl-layout__tab-panel is-active" id="img3-layout">
+            <section id="img3" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <header class="section__play-btn mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--teal-50 mdl-color-text--white">
+                </header>
+                <div class="mdl-card mdl-cell mdl-cell--4-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                    <div class="mdl-card__supporting-text">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%;">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Word</th>
+                                <th>Good</th>
+                                <th>Bad</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Airplane</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img3-option-1-1">
+                                        <input type="radio" id="img3-option-1-1" class="mdl-radio__button"
+                                               name="options1" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img3-option-1-2">
+                                        <input type="radio" id="img3-option-1-2" class="mdl-radio__button"
+                                               name="options1" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Ship</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img3-option-2-1">
+                                        <input type="radio" id="img3-option-2-1" class="mdl-radio__button"
+                                               name="options2" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img3-option-2-2">
+                                        <input type="radio" id="img3-option-2-2" class="mdl-radio__button"
+                                               name="options2" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Car</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3-1">
+                                        <input type="radio" id="img3-option-3-1" class="mdl-radio__button"
+                                               name="options3" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img3-option-3-2">
+                                        <input type="radio" id="img3-option-3-2" class="mdl-radio__button"
+                                               name="options3" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Vehicle</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img3-option-4-1">
+                                        <input type="radio" id="img3-option-4-1" class="mdl-radio__button"
+                                               name="options4" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img3-option-4-2">
+                                        <input type="radio" id="img3-option-4-2" class="mdl-radio__button"
+                                               name="options4" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Sport</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img3-option-5-1">
+                                        <input type="radio" id="img3-option-5-1" class="mdl-radio__button"
+                                               name="options5" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img3-option-5-2">
+                                        <input type="radio" id="img3-option-5-2" class="mdl-radio__button"
+                                               name="options5" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                         style="width:100%;">
+                                        <input class="mdl-textfield__input" type="text" id="img3-freetag">
+                                        <label class="mdl-textfield__label" for="img3-freetag">Own tag idea (optional)</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a id="img3-btn" href="#img4-layout" class="mdl-button">Next Picture</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="mdl-layout__tab-panel is-active" id="img4-layout">
+            <section id="img4" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <header class="section__play-btn mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--teal-50 mdl-color-text--white">
+                </header>
+                <div class="mdl-card mdl-cell mdl-cell--4-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                    <div class="mdl-card__supporting-text">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%;">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Word</th>
+                                <th>Good</th>
+                                <th>Bad</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Airplane</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img4-option-1-1">
+                                        <input type="radio" id="img4-option-1-1" class="mdl-radio__button"
+                                               name="options1" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img4-option-1-2">
+                                        <input type="radio" id="img4-option-1-2" class="mdl-radio__button"
+                                               name="options1" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Ship</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img4-option-2-1">
+                                        <input type="radio" id="img4-option-2-1" class="mdl-radio__button"
+                                               name="options2" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img4-option-2-2">
+                                        <input type="radio" id="img4-option-2-2" class="mdl-radio__button"
+                                               name="options2" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Car</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img3-option-3-1">
+                                        <input type="radio" id="img4-option-3-1" class="mdl-radio__button"
+                                               name="options3" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img4-option-3-2">
+                                        <input type="radio" id="img4-option-3-2" class="mdl-radio__button"
+                                               name="options3" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Vehicle</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img4-option-4-1">
+                                        <input type="radio" id="img4-option-4-1" class="mdl-radio__button"
+                                               name="options4" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img4-option-4-2">
+                                        <input type="radio" id="img4-option-4-2" class="mdl-radio__button"
+                                               name="options4" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Sport</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img4-option-5-1">
+                                        <input type="radio" id="img4-option-5-1" class="mdl-radio__button"
+                                               name="options5" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img4-option-5-2">
+                                        <input type="radio" id="img4-option-5-2" class="mdl-radio__button"
+                                               name="options5" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                         style="width:100%;">
+                                        <input class="mdl-textfield__input" type="text" id="img4-freetag">
+                                        <label class="mdl-textfield__label" for="img4-freetag">Own tag idea (optional)</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a id="img4-btn" href="#img5-layout" class="mdl-button">Next Picture</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="mdl-layout__tab-panel is-active" id="img5-layout">
+            <section id="img5" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <header class="section__play-btn mdl-cell mdl-cell--8-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--teal-50 mdl-color-text--white">
+                </header>
+                <div class="mdl-card mdl-cell mdl-cell--4-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                    <div class="mdl-card__supporting-text">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="width:100%;">
+                            <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Word</th>
+                                <th>Good</th>
+                                <th>Bad</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Airplane</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img5-option-1-1">
+                                        <input type="radio" id="img5-option-1-1" class="mdl-radio__button"
+                                               name="options1" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img5-option-1-2">
+                                        <input type="radio" id="img5-option-1-2" class="mdl-radio__button"
+                                               name="options1" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Ship</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img5-option-2-1">
+                                        <input type="radio" id="img5-option-2-1" class="mdl-radio__button"
+                                               name="options2" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img5-option-2-2">
+                                        <input type="radio" id="img5-option-2-2" class="mdl-radio__button"
+                                               name="options2" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Car</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img4-option-3-1">
+                                        <input type="radio" id="img5-option-3-1" class="mdl-radio__button"
+                                               name="options3" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img5-option-3-2">
+                                        <input type="radio" id="img5-option-3-2" class="mdl-radio__button"
+                                               name="options3" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Vehicle</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img5-option-4-1">
+                                        <input type="radio" id="img5-option-4-1" class="mdl-radio__button"
+                                               name="options4" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img5-option-4-2">
+                                        <input type="radio" id="img5-option-4-2" class="mdl-radio__button"
+                                               name="options4" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="mdl-data-table__cell--non-numeric">Sport</td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img5-option-5-1">
+                                        <input type="radio" id="img5-option-5-1" class="mdl-radio__button"
+                                               name="options5" value="1">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="img5-option-5-2">
+                                        <input type="radio" id="img5-option-5-2" class="mdl-radio__button"
+                                               name="options5" value="0">
+                                        <span class="mdl-radio__label">&nbsp;</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                         style="width:100%;">
+                                        <input class="mdl-textfield__input" type="text" id="img5-freetag">
+                                        <label class="mdl-textfield__label" for="img5-freetag">Own tag idea (optional)</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <a href="#img1-layout" class="mdl-button">Done!</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+</div>
+</body>
+</html>
